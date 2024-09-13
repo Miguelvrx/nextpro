@@ -1,18 +1,11 @@
 module.exports = {
-    globDirectory: 'dist/',
-    globPatterns: [
-      '**/*.{html,js,css,png,jpg}'
-    ],
-    swDest: 'dist/sw.js',
-    runtimeCaching: [{
-      urlPattern: /\.(?:png|jpg|jpeg|svg|gif)$/,
-      handler: 'CacheFirst',
-      options: {
-        cacheName: 'image',
-        expiration: {
-          maxEntries: 10,
-        },
-      },
-    }],
-  };
-  
+	globDirectory: 'dist/',
+	globPatterns: [
+		'**/*.{png,html,js,css}'
+	],
+	swDest: 'dist/sw.js',
+	ignoreURLParametersMatching: [
+		/^utm_/,
+		/^fbclid$/
+	]
+};
